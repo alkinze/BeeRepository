@@ -46,7 +46,7 @@ public class BeeProductControllerUnitTest {
 	public void getBeeProductByBeeTest() {
 		Mockito.when(this.beeProductService.findAll()).thenReturn(beeProductList);
 		try {
-			mockMvc.perform(get("/beeproduct/bee/forest")).andExpect(status().isOk())
+			mockMvc.perform(get("/beeproduct/bee/1")).andExpect(status().isOk())
 			.andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
 			.andDo(print()).andReturn();
 		}
@@ -60,7 +60,7 @@ public class BeeProductControllerUnitTest {
 	public void getBeeProductByProductTest() {
 		Mockito.when(this.beeProductService.findBySpecies()).thenReturn(beeProductList);
 		try {
-			mockMvc.perform(get("/beeproduct/product/honeycomb")).andExpect(status().isOk())
+			mockMvc.perform(get("/beeproduct/product/21")).andExpect(status().isOk())
 			.andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
 			.andDo(print()).andReturn();
 		}
